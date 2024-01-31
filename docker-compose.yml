@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  java-mongo-db:
+    container_name: java_mongo_container
+    image: mongo:6.0.6
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: JavaMongoDB
+      MONGO_INITDB_ROOT_USERNAME: leopoldo
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - ./local_db/mongo:/data/db
+    ports:
+      - 27017:27017
